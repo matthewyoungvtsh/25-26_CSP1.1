@@ -1,4 +1,10 @@
-x = 6
-while x > 5:
-    print(x)
-    x += 1
+import turtle as trtl
+painter = trtl.Turtle()
+
+x = input("What is the value of x? ")
+while (x != 0):
+    painter.forward(100)
+    painter.right(90)
+
+wn = trtl.Screen()
+wn.mainloop()
