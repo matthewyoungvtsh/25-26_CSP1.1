@@ -55,5 +55,42 @@ for a in range(2):
     painter.teleport(95, 60)
     c = -60
 
+#eyes
+painter.teleport(-20, 50)
+d = 1
+e = 0
+for e in range(2):
+    painter.setheading(340)
+    painter.circle(40, 45)
+    painter.setheading(160)
+    painter.circle(40,45)
+    painter.setheading(0)
+    painter.penup()
+    painter.forward(15)
+    painter.setheading(90)
+    painter.forward(10)
+    painter.setheading(270)
+    painter.pendown()
+    painter.circle(3)
+    painter.teleport(15,50)
+    d += 1
+
+#lips
+painter.setheading(350)
+painter.teleport(3, 12)
+
+l = 0
+for l in range(2):
+    painter.circle(170, 20)
+    painter.setheading(170)
+    l += 1
+painter.setheading(0)
+painter.forward(60)
+
+#nose
+painter.teleport(32, 30)
+painter.circle(5)
+
+
 wn = trtl.Screen()
 wn.mainloop()
