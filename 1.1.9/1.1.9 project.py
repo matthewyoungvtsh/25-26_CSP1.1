@@ -3,6 +3,8 @@ painter = trtl.Turtle()
 painter.speed(0)
 
 #cat's head
+painter.fillcolor("gray")
+painter.begin_fill()
 painter.setheading(320)
 painter.circle(50, 80)
 painter.teleport(33,86)
@@ -22,8 +24,10 @@ for x in range(2):
     painter.setheading(180)
     x +=1
     b = -1
+painter.end_fill()
 
 #ears
+painter.begin_fill()
 painter.teleport(-5, 75)
 a = 1
 c = 0
@@ -34,8 +38,12 @@ for a in range(2):
     painter.forward(55)
     painter.teleport(95, 60)
     c = -60
+painter.end_fill()
 
 #eyes
+#general eye shape
+painter.fillcolor("white")
+painter.begin_fill()
 painter.teleport(-15, 50)
 e = 0
 for e in range(2):
@@ -44,7 +52,11 @@ for e in range(2):
     painter.setheading(160)
     painter.circle(40,45)
     painter.teleport(45,50)
+painter.end_fill()
 
+#eye inside
+painter.fillcolor("blue")
+painter.begin_fill()
 if e >= c:
     painter.teleport(0, 48)
     f = 0
@@ -55,6 +67,7 @@ if e >= c:
         painter.forward(60)
         painter.pendown()
         f += 1
+painter.end_fill()
 
 #lips
 painter.setheading(350)
