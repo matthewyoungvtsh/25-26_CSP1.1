@@ -54,6 +54,7 @@ if e >= c:
         painter.penup()
         painter.forward(60)
         painter.pendown()
+        f += 1
 
 #lips
 painter.setheading(350)
@@ -72,11 +73,36 @@ painter.teleport(32, 27)
 painter.circle(4)
 
 #whiskers
-painter.teleport(-10, 35)
-painter.setheading(170)
-painter.forward(60)
-painter.setheading(200)
-painter.forward(60)
+painter.teleport(-15, 35)
+g = 0
+i = 0
+for g in range(2):
+    painter.teleport(5 + i, 35)
+    if g == 0:
+        painter.setheading(170)
+    else:
+        painter.setheading(10)
+    painter.forward(90)
+    if i > 0:
+        i = i - 4
+    painter.teleport(7 + i, 30)
+    if g == 0:
+        painter.setheading(190)
+    else:
+        painter.setheading(350)
+    painter.forward(90)
+    if i > 0:
+        i = i - 6
+    painter.teleport(10 + i, 28)
+    if g == 0:
+        painter.setheading(210)
+    else:
+        painter.setheading(330)
+    painter.forward(90)
+    i = 55
+
+#hide turtle
+painter.hideturtle()
 
 wn = trtl.Screen()
 wn.mainloop()
