@@ -2,26 +2,6 @@ import turtle as trtl
 painter = trtl.Turtle()
 painter.speed(0)
 
-'''#cat's tail
-painter.left(180)
-painter.circle(250, 35)
-painter.left(110)
-painter.circle(10, 50)
-painter.penup()
-painter.setposition(0, -10)
-painter.pendown()
-painter.left(165)
-painter.circle(262, 31)
-painter.penup()
-
-#cat's body
-painter.setposition(45, 130)
-painter.setheading(210)
-painter.pendown()
-for x in range(2):
-    painter.circle(110, 45)'''
-
-
 #cat's head
 painter.setheading(320)
 painter.circle(50, 80)
@@ -56,24 +36,24 @@ for a in range(2):
     c = -60
 
 #eyes
-painter.teleport(-20, 50)
-d = 1
+painter.teleport(-15, 50)
 e = 0
 for e in range(2):
     painter.setheading(340)
     painter.circle(40, 45)
     painter.setheading(160)
     painter.circle(40,45)
-    painter.setheading(0)
-    painter.penup()
-    painter.forward(15)
-    painter.setheading(90)
-    painter.forward(10)
-    painter.setheading(270)
-    painter.pendown()
-    painter.circle(3)
-    painter.teleport(15,50)
-    d += 1
+    painter.teleport(45,50)
+
+if e >= c:
+    painter.teleport(0, 48)
+    f = 0
+    for f in range(2):
+        painter.setheading(0)
+        painter.circle(3, 360)
+        painter.penup()
+        painter.forward(60)
+        painter.pendown()
 
 #lips
 painter.setheading(350)
@@ -88,9 +68,15 @@ painter.setheading(0)
 painter.forward(60)
 
 #nose
-painter.teleport(32, 30)
-painter.circle(5)
+painter.teleport(32, 27)
+painter.circle(4)
 
+#whiskers
+painter.teleport(-10, 35)
+painter.setheading(170)
+painter.forward(60)
+painter.setheading(200)
+painter.forward(60)
 
 wn = trtl.Screen()
 wn.mainloop()
