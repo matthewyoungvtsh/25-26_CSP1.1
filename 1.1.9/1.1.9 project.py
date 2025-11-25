@@ -1,8 +1,11 @@
+#1.1.9 Turtle Drawing Project - Cat's Face Drawing
 import turtle as trtl
 painter = trtl.Turtle()
 painter.speed(0)
 
-#cat's head
+#cat's general head shape
+
+#cat's chin
 painter.fillcolor("gray")
 painter.begin_fill()
 painter.setheading(320)
@@ -10,6 +13,7 @@ painter.circle(50, 80)
 painter.teleport(33,86)
 painter.setheading(180)
 
+#the rest of the cat's head, with the left side made using partial circles, which are then inverted for the right side of the head
 b = 1
 x = 1
 for x in range(2):
@@ -24,9 +28,15 @@ for x in range(2):
     painter.setheading(180)
     x +=1
     b = -1
+painter.pencolor("gray")
+painter.setheading(250)
+painter.forward(90)
+painter.setheading(0)
+painter.forward(70)
 painter.end_fill()
 
-#ears
+#cat's ears
+painter.pencolor("black")
 painter.begin_fill()
 painter.teleport(-5, 75)
 a = 1
@@ -40,8 +50,7 @@ for a in range(2):
     c = -60
 painter.end_fill()
 
-#eyes
-#general eye shape
+#general eye shape, filled with the color white
 painter.fillcolor("white")
 painter.begin_fill()
 painter.teleport(-15, 50)
@@ -54,8 +63,8 @@ for e in range(2):
     painter.teleport(45,50)
 painter.end_fill()
 
-#eye inside
-painter.fillcolor("blue")
+#inside of eye, the colorful part of the eye
+painter.fillcolor("green")
 painter.begin_fill()
 if e >= c:
     painter.teleport(0, 48)
@@ -69,7 +78,23 @@ if e >= c:
         f += 1
 painter.end_fill()
 
-#lips
+#eyes pupils, filled with the color black
+painter.fillcolor("black")
+painter.begin_fill()
+painter.teleport(0, 50)
+p = 0
+for p in range(2):
+    painter.setheading(0)
+    painter.circle(1, 360)
+    painter.penup()
+    painter.forward(60)
+    painter.pendown()
+    p += 1
+painter.end_fill()
+
+#lips, made with two partial circles and a line separating them, filled with the color pink
+painter.fillcolor("pink")
+painter.begin_fill()
 painter.setheading(350)
 painter.teleport(3, 12)
 
@@ -80,18 +105,22 @@ for l in range(2):
     l += 1
 painter.setheading(0)
 painter.forward(60)
+painter.end_fill()
 
-#nose
+#nose, a small circle filled with the color pink
+painter.begin_fill()
 painter.teleport(32, 27)
 painter.circle(4)
+painter.end_fill()
 
-#whiskers
+#whiskers: The painter starts on the left side of the drawing, moves down, then does the right side
+#the whiskers on the left are repeated on the right with a difference of 160 degrees in the direction the painter faces
 painter.teleport(-15, 35)
-g = 0
+w = 0
 i = 0
-for g in range(2):
+for w in range(2):
     painter.teleport(5 + i, 35)
-    if g == 0:
+    if w == 0:
         painter.setheading(170)
     else:
         painter.setheading(10)
@@ -99,7 +128,7 @@ for g in range(2):
     if i > 0:
         i = i - 4
     painter.teleport(7 + i, 30)
-    if g == 0:
+    if w == 0:
         painter.setheading(190)
     else:
         painter.setheading(350)
@@ -107,7 +136,7 @@ for g in range(2):
     if i > 0:
         i = i - 6
     painter.teleport(10 + i, 28)
-    if g == 0:
+    if w == 0:
         painter.setheading(210)
     else:
         painter.setheading(330)
