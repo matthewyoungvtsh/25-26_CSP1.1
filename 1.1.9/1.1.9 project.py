@@ -3,9 +3,9 @@ import turtle as trtl
 painter = trtl.Turtle()
 painter.speed(0)
 
-#cat's general head shape
+#cat's general head shape:
 
-#cat's chin
+#cat's chin: setting the color of the inside of shapes to gray, and making the outline of the chin
 painter.fillcolor("gray")
 painter.begin_fill()
 painter.setheading(320)
@@ -13,7 +13,7 @@ painter.circle(50, 80)
 painter.teleport(33,86)
 painter.setheading(180)
 
-#the rest of the cat's head, with the left side made using partial circles, which are then inverted for the right side of the head
+#the rest of the cat's head: The left side made using partial circles, which are then inverted for the right side of the head
 b = 1
 x = 1
 for x in range(2):
@@ -35,19 +35,28 @@ painter.setheading(0)
 painter.forward(70)
 painter.end_fill()
 
-#cat's ears
+#cat's ears: the outside, the lines that mark the inside area, and the color gray filling the ears
 painter.pencolor("black")
 painter.begin_fill()
 painter.teleport(-5, 75)
-a = 1
+a = 0
 c = 0
 for a in range(2):
-    painter.setheading(130 +c)
+    painter.setheading(130 + c)
     painter.forward(50)
-    painter.setheading(280 +c)
+    painter.setheading(280 + c)
     painter.forward(55)
+    if a == 0:
+        painter.teleport(-9, 71)
+    else:
+        painter.teleport(90, 60)
+    painter.setheading(130 + c)
+    painter.forward(35)
+    painter.setheading(280 + c)
+    painter.forward(38)
     painter.teleport(95, 60)
     c = -60
+    a += 1
 painter.end_fill()
 
 #general eye shape, filled with the color white
